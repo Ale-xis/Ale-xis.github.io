@@ -26,7 +26,75 @@
 </head>
 
 <body id="page-top">
+  
+  
+  <!-- Dialogflow Chatbot -->
+  <style type="text/css">
+    .km-faqquestion {
+      font-weight: bold;
+      font-style: italic; }
 
+    #mck-sidebox-launcher {
+      bottom: 30px !important;
+      right: 30px !important;
+      width: auto;
+      height: auto;
+     z-index: 999; }
+
+    .mck-sidebox-launcher {
+      overflow: visible !important;
+      box-shadow: none !important; }
+  </style>
+
+
+  <script type="text/javascript">
+    (function(d, m){      
+      function isMobileBrowser() { 
+ 	    if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) || navigator.userAgent.match(/webOS/i))
+          { return true; }
+        else
+	      { return false; }
+      }
+      
+      var kommunicateSettings = {
+	    "appId": "20e5ff31f165c53de275e6261e5980d32",
+	    "conversationTitle": "Pascal",
+	    "automaticChatOpenOnNavigation": true,
+		"msgTriggerTimeout": 15 * 1000,
+		"openConversationOnNewMessage": true
+
+		/*
+		"chatLauncherHtml": "<img src='https://www.senior65.com/new_images/bot.gif'/>"
+		"onInit": function (){
+		  //put code in here
+		}	
+        */
+      };
+
+      if(isMobileBrowser()) //This is code for mobile browser
+      {
+        kommunicateSettings.automaticChatOpenOnNavigation = false;
+      }
+      else //This is code for computer browser
+      {
+        kommunicateSettings.chatLauncherHtml = "<img src='https://www.senior65.com/new_images/chatbot_beneTalking.gif'/>";
+      }
+      
+      var s = document.createElement("script");
+      s.type = "text/javascript"; s.async = true; s.src = "https://api.kommunicate.io/kommunicate.app";
+
+      var h = document.getElementsByTagName("head")[0];
+      h.appendChild(s);
+
+      window.kommunicate = m; m._globals = kommunicateSettings;
+
+    })(document, window.kommunicate || {});
+  </script>
+
+
+
+ 
+  
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
