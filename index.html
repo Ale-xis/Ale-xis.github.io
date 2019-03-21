@@ -78,7 +78,8 @@
       }
       else //This is code for computer browser
       {
-        kommunicateSettings.chatLauncherHtml = "<img src='https://github.com/Ale-xis/Ale-xis.github.io/blob/master/img/bitmoji_1.png?raw=true'/>";
+	    var chatLauncher = "bitmoji_" + Math.floor(Math.random() * 3) + 1  ;
+        kommunicateSettings.chatLauncherHtml = "<img src='https://github.com/Ale-xis/Ale-xis.github.io/blob/master/img/"+chatLauncher+".png?raw=true'/>";
       }
       
       var s = document.createElement("script");
