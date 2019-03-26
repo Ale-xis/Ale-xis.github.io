@@ -36,15 +36,15 @@
       font-style: italic; }
 
     #mck-sidebox-launcher {
-      bottom: 0px !important;
-      right: 0px !important;
+      bottom: 0px;
+      right: 0px;
       width: auto;
       height: auto;
      z-index: 999; }
 
     .mck-sidebox-launcher {
-      overflow: visible !important;
-      box-shadow: none !important; }
+      overflow: visible;
+      box-shadow: none; }
   </style>
 
 
@@ -75,6 +75,7 @@
       if(isMobileBrowser()) //This is code for mobile browser
       {
         kommunicateSettings.automaticChatOpenOnNavigation = false;
+		#mck-sidebox-launcher.bottom: 20px; #mck-sidebox-launcher.right: 10px;
       }
       else //This is code for computer browser
       {
