@@ -71,21 +71,21 @@
 		}	
         */
       };
-
+	  
+      var s = document.createElement("script");
+      s.type = "text/javascript"; s.async = true; s.src = "https://api.kommunicate.io/kommunicate.app";
+	  
       if(isMobileBrowser()) //This is code for mobile browser
       {
         kommunicateSettings.automaticChatOpenOnNavigation = false;		
-		#mck-sidebox-launcher.bottom: 20px;
-		#mck-sidebox-launcher.right: 10px;
+		document.getElementById("script").style.mck-sidebox-launcher.bottom: 20px;
+		document.getElementById("script").style.mck-sidebox-launcher.right: 10px;
       }
       else //This is code for computer browser
       {
 	    var randomIndex = Math.floor(Math.random() * 4) + 1;
         kommunicateSettings.chatLauncherHtml = "<img src='https://github.com/Ale-xis/Ale-xis.github.io/blob/master/img/bitmoji_"+randomIndex+".png?raw=true'/>";
       }
-      
-      var s = document.createElement("script");
-      s.type = "text/javascript"; s.async = true; s.src = "https://api.kommunicate.io/kommunicate.app";
 
       var h = document.getElementsByTagName("head")[0];
       h.appendChild(s);
