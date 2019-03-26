@@ -36,15 +36,15 @@
       font-style: italic; }
 
     #mck-sidebox-launcher {
-      bottom: 0px;
-      right: 0px;
+      bottom: 0px !important;
+      right: 0px !important;
       width: auto;
       height: auto;
      z-index: 999; }
 
     .mck-sidebox-launcher {
-      overflow: visible;
-      box-shadow: none; }
+      overflow: visible !important;
+      box-shadow: none !important; }
   </style>
 
 
@@ -74,7 +74,7 @@
 
       if(isMobileBrowser()) //This is code for mobile browser
       {
-        kommunicateSettings.automaticChatOpenOnNavigation = false;
+        kommunicateSettings.automaticChatOpenOnNavigation = false;		
 		#mck-sidebox-launcher.bottom: 20px; #mck-sidebox-launcher.right: 10px;
       }
       else //This is code for computer browser
@@ -118,7 +118,14 @@
   <section class="page-section" id="contact">
     <div class="container">
 	  <div class="row">
-		<img class="img-fluid" src="img/professional-headshot_text.png" alt="" style="width:auto;height:auto;">
+		<div class="col-lg-3 ml-auto text-center" style="padding-left:0px;padding-right:0px">
+		  <img class="img-fluid" src="img/professional-headshot.png" alt="" style="width:auto;height:auto;">	    
+		</div>
+		<div class="col-lg-8 ml-auto text-center" style="transform:translateY(35%);padding-left:0px;padding-right:200px;">
+		  <h2 class="mt-0">Let's Get In Touch</h2>
+		  <hr class="divider my-4">
+		  <p class="text-muted mb-5">Interested in what you see? Ask Sergio the chatbot for my contact! :)</p>
+		</div>
 	  </div>
     </div>
   </section>
@@ -127,10 +134,10 @@
   <footer class="bg-light py-5">
     <div class="container">
       <div class="small text-center text-muted">Copyright &copy; 2019 - Alexis Pomares Pastor</div>
-	  <!--<i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+	  <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
 	  <div>+1 (202) 123-4567</div>
 	  <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-	  <a class="d-block" href="mailto:alexispp95@gmail.com">alexispp95@gmail.com</a>-->
+	  <a class="d-block" href="mailto:alexispp95@gmail.com">alexispp95@gmail.com</a>
     </div>
   </footer>
 
