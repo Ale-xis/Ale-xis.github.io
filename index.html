@@ -50,13 +50,6 @@
 
   <script type="text/javascript">
     (function(d, m){      
-      function isMobileBrowser() { 
- 	    if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) || navigator.userAgent.match(/webOS/i))
-          { return true; }
-        else
-	      { return false; }
-      }
-      
       var kommunicateSettings = {
 	    "appId": "20e5ff31f165c53de275e6261e5980d32",
 	    "conversationTitle": "Sergio",
@@ -65,23 +58,28 @@
 		"openConversationOnNewMessage": true
       };
 	  
+	  function isMobileBrowser() { 
+ 	    if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) || navigator.userAgent.match(/webOS/i))
+          { return true; }
+        else
+	      { return false; }
+      }
+	  
+	  var s = document.createElement("script");
+      s.type = "text/javascript"; s.async = true; s.src = "https://api.kommunicate.io/kommunicate.app";
 	  
       if(isMobileBrowser()) //This is code for mobile browser
       {
         kommunicateSettings.automaticChatOpenOnNavigation = false;
-		console.log($(".mck-sidebox-launcher").css("bottom"));
 		$(".mck-sidebox-launcher").css("bottom","20px !important");
       }
       else //This is code for computer browser
       {
 		var randomIndex = Math.floor(Math.random() * 4) + 1;
 	    kommunicateSettings.chatLauncherHtml = "<img src='https://github.com/Ale-xis/Ale-xis.github.io/blob/master/img/bitmoji_"+randomIndex+".png?raw=true'/>";
-		$(".mck-sidebox-launcher").css("bottom","20px !important");
-		$(".mck-sidebox-launcher").css("right","20px !important");
+		s.style.mck-sidebox-launcher.bottom = "20px !important";
       }
 	  
-	  var s = document.createElement("script");
-      s.type = "text/javascript"; s.async = true; s.src = "https://api.kommunicate.io/kommunicate.app";
 	  
       var h = document.getElementsByTagName("head")[0];
       h.appendChild(s);
