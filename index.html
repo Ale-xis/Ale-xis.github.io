@@ -67,11 +67,11 @@
 	  
 	  var s = document.createElement("script");
       s.type = "text/javascript"; s.async = true; s.src = "https://api.kommunicate.io/kommunicate.app";
-	  console.log(s);
 	  
       var h = document.getElementsByTagName("head")[0];
       h.appendChild(s);
-	  console.log(h);
+	  console.log(h.style);
+	  h.style.bottom = "20px !important";
 	  
       if(isMobileBrowser()) //This is code for mobile browser
       {
@@ -84,7 +84,7 @@
 	    kommunicateSettings.chatLauncherHtml = "<img src='https://github.com/Ale-xis/Ale-xis.github.io/blob/master/img/bitmoji_"+randomIndex+".png?raw=true'/>";
       }
 	  
-      window.kommunicate = m; console.log(m); m._globals = kommunicateSettings;
+      window.kommunicate = m; m._globals = kommunicateSettings;
 
     })(document, window.kommunicate || {});
   </script>
