@@ -83,8 +83,9 @@
 	  
       var h = document.getElementsByTagName("head")[0];
       h.appendChild(s);
+	  console.log(h);
 
-      window.kommunicate = m; m._globals = kommunicateSettings;
+      window.kommunicate = m; console.log(m);m._globals = kommunicateSettings;
 
     })(document, window.kommunicate || {});
   </script>
