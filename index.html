@@ -69,6 +69,10 @@
       s.type = "text/javascript"; s.async = true; s.src = "https://api.kommunicate.io/kommunicate.app";
 	  console.log(s);
 	  
+      var h = document.getElementsByTagName("head")[0];
+      h.appendChild(s);
+	  console.log(h);
+	  
       if(isMobileBrowser()) //This is code for mobile browser
       {
         kommunicateSettings.automaticChatOpenOnNavigation = false;
@@ -80,12 +84,7 @@
 	    kommunicateSettings.chatLauncherHtml = "<img src='https://github.com/Ale-xis/Ale-xis.github.io/blob/master/img/bitmoji_"+randomIndex+".png?raw=true'/>";
       }
 	  
-	  
-      var h = document.getElementsByTagName("head")[0];
-      h.appendChild(s);
-	  console.log(h);
-
-      window.kommunicate = m; console.log(m);m._globals = kommunicateSettings;
+      window.kommunicate = m; console.log(m); m._globals = kommunicateSettings;
 
     })(document, window.kommunicate || {});
   </script>
