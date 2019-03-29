@@ -35,16 +35,14 @@
       font-weight: bold;
       font-style: italic; }
 
-    #mck-sidebox-launcher {
+    .mck-sidebox-launcher {
+      overflow: visible !important;
+      box-shadow: none !important;
       bottom: 0px !important;
       right: 0px !important;
       width: auto;
       height: auto;
-     z-index: 999; }
-
-    .mck-sidebox-launcher {
-      overflow: visible !important;
-      box-shadow: none !important; }
+      z-index: 999;  }
   </style>
 
 
@@ -62,28 +60,22 @@
 	    "conversationTitle": "Sergio",
 	    "automaticChatOpenOnNavigation": true,
 		//"msgTriggerTimeout": 60 * 1000,
-		"openConversationOnNewMessage": true,
-		"chatLauncherHtml": "<img src='https://www.senior65.com/new_images/bot.gif'/>"
-
-		/*
-		"onInit": function (){
-		  //put code in here
-		}	
-        */
+		"openConversationOnNewMessage": true
       };
 	  
-	  var randomIndex = Math.floor(Math.random() * 4) + 1;
-	  kommunicateSettings.chatLauncherHtml = "<img src='https://github.com/Ale-xis/Ale-xis.github.io/blob/master/img/bitmoji_"+randomIndex+".png?raw=true'/>";
-      
+	  
       if(isMobileBrowser()) //This is code for mobile browser
       {
         kommunicateSettings.automaticChatOpenOnNavigation = false;
+		console.log($("mck-sidebox-launcher").css("bottom"));
+		$("mck-sidebox-launcher").css("bottom","20");
       }
       else //This is code for computer browser
       {
-		
+		var randomIndex = Math.floor(Math.random() * 4) + 1;
+	    kommunicateSettings.chatLauncherHtml = "<img src='https://github.com/Ale-xis/Ale-xis.github.io/blob/master/img/bitmoji_"+randomIndex+".png?raw=true'/>";
       }
-
+	  
 	  var s = document.createElement("script");
       s.type = "text/javascript"; s.async = true; s.src = "https://api.kommunicate.io/kommunicate.app";
 	  
