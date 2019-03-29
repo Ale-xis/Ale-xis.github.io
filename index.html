@@ -67,6 +67,7 @@
 	  
 	  var s = document.createElement("script");
       s.type = "text/javascript"; s.async = true; s.src = "https://api.kommunicate.io/kommunicate.app";
+	  console.log(s);
 	  
       if(isMobileBrowser()) //This is code for mobile browser
       {
@@ -77,7 +78,6 @@
       {
 		var randomIndex = Math.floor(Math.random() * 4) + 1;
 	    kommunicateSettings.chatLauncherHtml = "<img src='https://github.com/Ale-xis/Ale-xis.github.io/blob/master/img/bitmoji_"+randomIndex+".png?raw=true'/>";
-		s.style.bottom = "20px !important";
       }
 	  
 	  
