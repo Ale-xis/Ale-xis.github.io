@@ -45,10 +45,20 @@
       width: auto;
       height: auto;
       z-index: 999;  }
+	
+	#kommunicate-widget-iframe { display: block; }
   </style>
 
 
   <script type="text/javascript">
+    function isMobileBrowser() { 
+ 	  return(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) || navigator.userAgent.match(/webOS/i));
+    }
+	
+	function fallbackChatbot() { 
+ 	  console.log("fallbacked");
+    }
+	
     (function(d, m){      
       var kommunicateSettings = {
 	    "appId": "20e5ff31f165c53de275e6261e5980d32",
@@ -57,22 +67,13 @@
 		//"msgTriggerTimeout": 60 * 1000,
 		"openConversationOnNewMessage": true
       };
-	  
-	  function isMobileBrowser() { 
- 	    if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) || navigator.userAgent.match(/webOS/i))
-          { return true; }
-        else
-	      { return false; }
-      }
-	  
-      if(isMobileBrowser()) //This is code for mobile browser
-      {
+	  console.log(isMobileBrowser());
+      if(isMobileBrowser()) {
         kommunicateSettings.automaticChatOpenOnNavigation = false;
 		var randomIndex = Math.floor(Math.random() * 3) + 1;
 	    kommunicateSettings.chatLauncherHtml = "<img src='https://github.com/Ale-xis/Ale-xis.github.io/blob/master/img/mobile_bitmoji_"+randomIndex+".png?raw=true'/>";
       }
-      else //This is code for computer browser
-      {
+      else {
 		var randomIndex = Math.floor(Math.random() * 4) + 1;
 	    kommunicateSettings.chatLauncherHtml = "<img src='https://github.com/Ale-xis/Ale-xis.github.io/blob/master/img/bitmoji_"+randomIndex+".png?raw=true'/>";
       }
@@ -85,7 +86,7 @@
 	  
       window.kommunicate = m; m._globals = kommunicateSettings;
 
-    })(document, window.kommunicate || {});
+    })(document, window.kommunicate || fallbackChatbot());
   </script>
 
 
