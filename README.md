@@ -14,4 +14,4 @@ Pascal
 ---
 
 
-#### <i>PS: I am currently on PTO (on vacations 🌴), so I won't be able to respond to your messages at the moment. Please come back in a few days, when I'll be back to the office! 😜</i>
+#### <i>PS: I am currently on PTO (on vacations 🌴), so I won't be able to respond to your messages. Please come back in a few days, when I'll be back to the office! 😜</i>
