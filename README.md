@@ -7,7 +7,9 @@ I was designed to walk people through Alexis' professional career in an interact
 Anyway, come find me at https://ale-xis.github.io/ and feel free to type any question you want! I work 24/7, 365 days a year. Perks of being an immaterial piece of software, I guess.
 
 See you soon!
+
 Pascal
+
 
 ---
 
